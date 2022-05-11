@@ -32,6 +32,6 @@ jobs:
         rm -rf frontend/dist frontend/node_modules dist build
     # ShiftLeft NG SAST ignores test directory by default
     - name: Analyze with NG SAST
-      run: ${GITHUB_WORKSPACE}/sl analyze --app juice-shop-linux --tag branch=${GITHUB_REF} --verbose --wait --js --cpg . -- --optimize-dependencies --with-tests --include-configs --exclude node_modules,frontend/dist,frontend/node_modules,vagrant,dist,data/static,build 
+      run: ${GITHUB_WORKSPACE}/sl analyze --app juice-shop-linux --tag branch=${GITHUB_REF} --verbose --wait --js --cpg . -- --with-tests --include-configs --exclude node_modules,frontend/dist,frontend/node_modules,vagrant,dist,data/static,build 
       env:
         SHIFTLEFT_ACCESS_TOKEN: ${{ secrets.SHIFTLEFT_ACCESS_TOKEN }}
